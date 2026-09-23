@@ -38,9 +38,9 @@ def cross_validate_models(X, y, n_splits=5):
 def evaluate_on_holdout(model, X_test, y_test) -> dict:
     preds = model.predict(X_test)
     return {
-        "mae": round(mean_absolute_error(y_test, preds), 3),
-        "rmse": round(np.sqrt(mean_squared_error(y_test, preds)), 3),
-        "r2": round(r2_score(y_test, preds), 3),
+        "mae": round(float(mean_absolute_error(y_test, preds)), 3),
+        "rmse": round(float(np.sqrt(mean_squared_error(y_test, preds))), 3),
+        "r2": round(float(r2_score(y_test, preds)), 3),
     }
 
 
